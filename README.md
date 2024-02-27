@@ -42,4 +42,5 @@ You can preview the production build with `npm run preview`.
 ```bash
 npm create svelte@latest svelte-landing
 nvm use 18.17.0
-``
+```
+Then integrating tailwind
