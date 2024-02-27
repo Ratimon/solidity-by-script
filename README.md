@@ -43,4 +43,10 @@ You can preview the production build with `npm run preview`.
 npm create svelte@latest svelte-landing
 nvm use 18.17.0
 ```
-Then integrating tailwind
+Then integrating tailwind.
+
+Next, configing to use postcss,
+
+```bash
+pnpm add -D @tailwindcss/forms @tailwindcss/typography daisyui postcss-load-config svelte-preprocess
+```
