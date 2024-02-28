@@ -50,3 +50,9 @@ Next, configing to use postcss,
 ```bash
 pnpm add -D @tailwindcss/forms @tailwindcss/typography daisyui postcss-load-config svelte-preprocess
 ```
+
+```bash
+pnpm add -D pwag @iconify/svelte
+```
+
+Mask Icon: https://maskable.app/

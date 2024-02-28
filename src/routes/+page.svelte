@@ -1,2 +1,26 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script  lang="ts">
+
+    import Header from './Header.svelte';
+    // import Footer from './Footer.svelte';
+
+  
+    // in case you want to use the multiple pages app 
+    const headLinks = [
+        {pathname: '/', title: 'Home'},
+        {pathname: '/docs', title: 'Documentation'},
+        {pathname: '/github', title: 'github'},
+        {pathname: '/twitter', title: 'Twitter'},
+    ];
+
+    // const footLinks = [
+    //     {pathname: '/', title: 'Home'},
+    //     {pathname: '/docs', title: 'Documentation'},
+    //     {pathname: '/github', title: 'github'},
+    //     {pathname: '/twitter', title: 'Twitter'},
+  	// ];
+    
+  
+  </script>
+    
+  <Header links={headLinks} class="bg-base-200 "></Header>
+  <!-- <Footer links={footLinks}></Footer> -->

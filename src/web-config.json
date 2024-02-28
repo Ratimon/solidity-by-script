@@ -1,7 +1,15 @@
 {
-	"appName": "Landing Page",
-	"appTitle": "Landing Page",
-	"appDescription": "Landing Page",
+	"appName": "Solidity By Script",
+	"appTitle": "Solidity By Script",
+	"appDescription": "Solidity By Script",
 	"themeColor": "#000000",
-	"appleStatusBarStyle": "black-translucent"
+	"appleStatusBarStyle": "black-translucent",
+	"icon": "static/icon.svg",
+	"maskableIcons": [
+		{
+			"src": "../maskable_icon_512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
 }
