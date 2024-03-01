@@ -7,6 +7,12 @@
     import Header from './Header.svelte';
     import CopyIcon from '$lib/ui/icons/CopyIcon.svelte';
     import CheckIcon from '$lib/ui/icons/CheckIcon.svelte';
+
+    import ERC20Controls from '$lib/ui/controls/ERC20Controls.svelte';
+    import ERC721Controls from '$lib/ui/controls/ERC721Controls.svelte';
+    import ERC1155Controls from '$lib/ui/controls/ERC1155Controls.svelte';
+    import GovernorControls from '$lib/ui/controls/GovernorControls.svelte';
+    import CustomControls from '$lib/ui/controls/CustomControls.svelte';
     // import Footer from './Footer.svelte';
 
     import type { KindedOptions, Kind, Contract, OptionsErrorMessages } from '$lib/wizard';
@@ -87,60 +93,73 @@ const language = 'solidity';
     
   <Header links={headLinks} class="bg-base-200 "></Header>
 
-  <!-- <div class="container flex flex-col gap-4 p-4"> -->
-
   <div class="flex flex-col gap-4 p-4">
-
 
     <div class="flex flex-row justify-between">
       <div class="overflow-hidden">
-
-            <ul class="menu menu-horizontal bg-base-200">
-              <li>
-                <button class:selected={tab === 'ERC20'} on:click={() => tab = 'ERC20'}>
-                  ERC20
-                </button>
-              </li>
-              <li>
-                <button class:selected={tab === 'ERC721'} on:click={() => tab = 'ERC721'}>
-                  ERC721
-                </button>
-              </li>
-              <li>
-                <button class:selected={tab === 'ERC1155'} on:click={() => tab = 'ERC1155'}>
-                  ERC1155
-                </button>
-              </li>
-              <li>
-                <button class:selected={tab === 'Governor'} on:click={() => tab = 'Governor'}>
-                  Governor
-                </button>
-              </li>
-              <li>
-                <button class:selected={tab === 'Custom'} on:click={() => tab = 'Custom'}>
-                  Custom
-                </button>
-              </li>
-            </ul>
-            
+        <ul class="menu menu-horizontal bg-base-200">
+          <li>
+            <button class:selected={tab === 'ERC20'} on:click={() => tab = 'ERC20'}>
+              ERC20
+            </button>
+          </li>
+          <li>
+            <button class:selected={tab === 'ERC721'} on:click={() => tab = 'ERC721'}>
+              ERC721
+            </button>
+          </li>
+          <li>
+            <button class:selected={tab === 'ERC1155'} on:click={() => tab = 'ERC1155'}>
+              ERC1155
+            </button>
+          </li>
+          <li>
+            <button class:selected={tab === 'Governor'} on:click={() => tab = 'Governor'}>
+              Governor
+            </button>
+          </li>
+          <li>
+            <button class:selected={tab === 'Custom'} on:click={() => tab = 'Custom'}>
+              Custom
+            </button>
+          </li>
+        </ul>
       </div>
 
       <div class="action flex flex-row gap-2 shrink-0">
-
         <button class="action-button min-w-[165px]" on:click={copyHandler}>
-
           <div class="flex justify-between">
             {#if copied}
               <CheckIcon />Copied
             {:else}
               <CopyIcon />Copy to Clipboard
             {/if}
-
           </div>
         </button>
+      </div>
 
-    
+    </div>
+
+    <div class="flex flex-row gap-4 grow">
+      <div class="controls w-64 flex flex-col shrink-0 justify-between h-[calc(100vh-84px)] overflow-auto">
+        <div class:hidden={tab !== 'ERC20'}>
+          <ERC20Controls bind:opts={allOpts.ERC20} />
+        </div>
+        <div class:hidden={tab !== 'ERC721'}>
+          <ERC721Controls bind:opts={allOpts.ERC721} />
+        </div>
+        <div class:hidden={tab !== 'ERC1155'}>
+          <ERC1155Controls bind:opts={allOpts.ERC1155} />
+        </div>
+        <div class:hidden={tab !== 'Governor'}>
+          <GovernorControls bind:opts={allOpts.Governor} errors={errors.Governor} />
+        </div>
+        <div class:hidden={tab !== 'Custom'}>
+          <CustomControls bind:opts={allOpts.Custom} />
+        </div>
       </div>
     </div>
+
+
 
   </div>
