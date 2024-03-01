@@ -25,7 +25,6 @@ export function printContract(contract: Contract, opts?: Options): string {
     ...spaceBetween(
       [
         `// SPDX-License-Identifier: ${contract.license}`,
-        `// Compatible with OpenZeppelin Contracts ${compatibleContractsSemver}`,
         `pragma solidity ^${SOLIDITY_VERSION};`,
       ],
 
