@@ -21,8 +21,6 @@
 
     import { injectHyperlinks } from '$lib/ui/utils/inject-hyperlinks';
 
-    
-
     // in case you want to use the multiple pages app 
     const headLinks = [
         {pathname: '/', title: 'Home'},
@@ -93,10 +91,10 @@ const language = 'solidity';
     
   <Header links={headLinks} class="bg-base-200 "></Header>
 
-  <div class="flex flex-col gap-4 p-4">
+  <div class="container flex flex-col gap-4 p-4">
 
-    <div class="flex flex-row justify-between">
-      <div class="overflow-hidden">
+    <div class="header flex flex-row justify-between">
+      <div class="tab overflow-hidden">
         <ul class="menu menu-horizontal bg-base-200">
           <li>
             <button class:selected={tab === 'ERC20'} on:click={() => tab = 'ERC20'}>
@@ -160,6 +158,83 @@ const language = 'solidity';
       </div>
     </div>
 
-
-
   </div>
+
+  <style lang="postcss">
+    .container {
+      background-color: var(--gray-1);
+      border: 1px solid var(--gray-2);
+      border-radius: 10px;
+      min-width: 32rem;
+    }
+  
+    .header {
+      font-size: var(--text-small);
+    }
+  
+    .tab {
+      color: var(--gray-5);
+    }
+  
+    .tab button, .action-button, :global(.overflow-btn) {
+      padding: var(--size-1) var(--size-2);
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  
+    .tab button, :global(.overflow-btn) {
+      border: 0;
+      background-color: transparent;
+    }
+  
+    .tab button:hover, :global(.overflow-btn):hover {
+      background-color: var(--gray-2);
+    }
+  
+    .tab button.selected {
+      background-color: var(--solidity-blue-2);
+      color: white;
+      order: -1;
+    }
+  
+    :global(.overflow-menu) button.selected {
+      order: unset;
+    }
+  
+    .action-button {
+      background-color: var(--gray-1);
+      border: 1px solid var(--gray-3);
+      color: var(--gray-6);
+      cursor: pointer;
+  
+      &:hover {
+        background-color: var(--gray-2);
+      }
+  
+      /* &:active, &.active {
+        background-color: var(--gray-2);
+      }
+      */
+
+      /* &.disabled {
+        color: var(--gray-4);
+      } */
+  
+      :global(.icon) {
+        margin-right: var(--size-1);
+      }
+    }
+  
+    .controls {
+      background-color: white;
+      padding: var(--size-4);
+    }
+  
+    /* .controls, .output {
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+    }
+   */
+  </style>
+  

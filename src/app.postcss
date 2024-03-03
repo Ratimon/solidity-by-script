@@ -1,13 +1,13 @@
 /* Write your global styles here, in PostCSS syntax */
 @import "highlight.js/styles/atom-one-dark.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import "./reset.css";
-@import "./vars.css";
-@import "./tippy.css";
+@import "./styles/reset.css";
+@import "./styles/vars.css";
+@import "./styles/tippy.css";
 
 html,
 body {
@@ -48,14 +48,14 @@ progress::-webkit-progress-value {
   transition: 0.6s width ease-out;
 }
 
-@layer base {
+/* @layer base {
   .btn-gradient {
     @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
   }
   .btn {
     @apply !capitalize;
   }
-}
+} */
 
 
 /* Components */
