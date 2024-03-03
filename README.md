@@ -55,4 +55,7 @@ pnpm add -D @tailwindcss/forms @tailwindcss/typography daisyui postcss-load-conf
 pnpm add -D pwag @iconify/svelte
 ```
 
-Mask Icon: https://maskable.app/
+## Ref
+- Mask Icon: https://maskable.app/
+
+- https://icon-sets.iconify.design/
